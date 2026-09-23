@@ -1,0 +1,51 @@
+def hyperbolic_menu():
+    print_header("SECTION 2: HYPERBOLIC FUNCTIONS")
+    print("1. sinh(x)")
+    print("2. cosh(x)")
+    print("3. tanh(x)")
+    print("4. asinh(x)")
+    print("5. acosh(x)")
+    print("6. atanh(x)")
+    
+    choice = safe_input("Enter your choice (1-6): ").strip()
+
+    if choice == "1":
+        x = get_float("Enter x: ")
+        result = math.sinh(x)
+        print(f"sinh( {x} ) = {result}")
+
+    elif choice == "2":
+        x = get_float("Enter x: ")
+        result = math.cosh(x)
+        print(f"cosh( {x} ) = {result}")
+
+    elif choice == "3":
+        x = get_float("Enter x: ")
+        result = math.tanh(x)
+        print(f"tanh( {x} ) = {result}")
+
+    elif choice == "4":
+        x = get_float("Enter x: ")
+        result = math.asinh(x)
+        print(f"asinh( {x} ) = {result}")
+
+    elif choice == "5":
+        x = get_float("Enter x: ")
+        try:
+            result = math.acosh(x)
+            print(f"acosh( {x} ) = {result}")
+        except ValueError:
+            print("ERROR! acosh(x) requires x >= 1.")
+
+    elif choice == "6":
+        x = get_float("Enter x: ")
+        try:
+            result = math.atanh(x)
+            print(f"atanh( {x} ) = {result}")
+        except ValueError:
+            print("ERROR! atanh(x) requires -1 < x < 1.")
+
+    else:
+        print("\nInvalid choice.")
+
+    pause()
